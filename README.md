@@ -62,7 +62,7 @@ const ledger = new Ledger([exampleNet])
 
 
 ## Contribution
-Check out the [Contributing](./CONTRIBUTING.md) guide and please adhere to the [Code of Conduct](#)
+Check out the [Contributing](./CONTRIBUTING.md) guide and please adhere to the [Code of Conduct](./CONTRIBUTING.md#Conduct)
 
 ## License
 [MIT licensed](./LICENSE)
