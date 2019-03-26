@@ -1,4 +1,4 @@
-# UAL Ledger Authenticator
+# UAL for Ledger Authenticator ![EOSIO Alpha](https://img.shields.io/badge/EOSIO-Alpha-blue.svg)
 
 This authenticator is meant to be used with [Ledger](https://www.ledger.com/) and [Universal Authenticator Library](https://github.com/EOSIO/universal-authenticator-library). When used in combination with them, it gives developers the ability to request transaction signatures through a Ledger device using the common UAL API.
 
@@ -9,10 +9,10 @@ This authenticator is meant to be used with [Ledger](https://www.ledger.com/) an
 
 ```bash
 # Using yarn
-yarn add @blockone/ual-ledger
+yarn add ual-ledger
 
 # Using npm
-npm install @blockone/ual-ledger --save
+npm install ual-ledger --save
 ```
 
 #### Dependencies
@@ -20,9 +20,9 @@ npm install @blockone/ual-ledger --save
 * You must have the [eos app](https://support.ledger.com/hc/en-us/articles/360008913653) installed on your ledger device. You can download it to your device using [Ledger Live](https://www.ledger.com/pages/ledger-live), if you do not already have it.
 * Use one of the UAL renderers below.
 
-  * React - `@blockone/universal-authenticator-library-react-js-renderer`
+  * React - `universal-authenticator-library-react-js-renderer`
 
-  * Vanillajs - `@blockone/universal-authenticator-library-plain-js-renderer`
+  * Vanillajs - `universal-authenticator-library-plain-js-renderer`
 
 * An `HTTPS` connection is required
 
@@ -31,8 +31,8 @@ npm install @blockone/ual-ledger --save
 #### Basic Usage with React
 
 ```jsx
-import { Ledger } from '@blockone/ual-ledger'
-import { UALProvider, withUAL } from '@blockone/universal-authenticator-library-react-js-renderer'
+import { Ledger } from 'ual-ledger'
+import { UALProvider, withUAL } from 'universal-authenticator-library-react-js-renderer'
 
 const exampleNet = {
   chainId: '',
@@ -62,7 +62,7 @@ const ledger = new Ledger([exampleNet])
 
 
 ## Contribution
-Check out the [Contributing](./CONTRIBUTING.md) guide and please adhere to the [Code of Conduct](#)
+Check out the [Contributing](./CONTRIBUTING.md) guide and please adhere to the [Code of Conduct](./CONTRIBUTING.md#Conduct)
 
 ## License
 [MIT licensed](./LICENSE)
