@@ -1,6 +1,6 @@
 {
-  "name": "@blockone/ual-ledger",
-  "version": "0.0.4",
+  "name": "ual-ledger",
+  "version": "0.0.5",
   "main": "dist/index.js",
   "license": "MIT",
   "author": {
