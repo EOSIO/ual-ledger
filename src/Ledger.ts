@@ -7,7 +7,7 @@ import {
   UALErrorType,
   UALLoggedInAuthType,
   User,
-} from '@blockone/universal-authenticator-library'
+} from 'universal-authenticator-library'
 import { CONSTANTS } from './constants'
 import { LedgerOptions, Name } from './interfaces'
 import { ledgerLogo } from './ledgerLogo'
