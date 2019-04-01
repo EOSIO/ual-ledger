@@ -19,9 +19,9 @@
     "prepare": "yarn clean-build"
   },
   "dependencies": {
-    "@blockone/eosjs-ledger-signature-provider": "0.0.3",
-    "@blockone/universal-authenticator-library": "0.0.34",
-    "eosjs": "20.0.0-08d2a9b.0",
+    "eosjs-ledger-signature-provider": "0.1.1",
+    "universal-authenticator-library": "0.1.0",
+    "eosjs": "20.0.0",
     "uuid": "3.3.2"
   },
   "devDependencies": {

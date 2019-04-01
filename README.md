@@ -1,5 +1,7 @@
 # UAL for Ledger Authenticator
 
+*NOTE: Currently does not work in Chromium/Chrome due to a known U2F bug https://github.com/LedgerHQ/ledgerjs/issues/306*
+
 This authenticator is meant to be used with [Ledger](https://www.ledger.com/) and [Universal Authenticator Library](https://github.com/EOSIO/universal-authenticator-library). When used in combination with them, it gives developers the ability to request transaction signatures through a Ledger device using the common UAL API.
 
 ![EOSIO Labs](https://img.shields.io/badge/EOSIO-Labs-5cb3ff.svg)
