@@ -1,10 +1,10 @@
-import { SignatureProvider } from '@blockone/eosjs-ledger-signature-provider'
-import { Chain, SignTransactionResponse, UALErrorType, User } from '@blockone/universal-authenticator-library'
 import { Api, JsonRpc } from 'eosjs'
+import { SignatureProvider } from 'eosjs-ledger-signature-provider'
 import {
   TextDecoder as NodeTextDecoder,
   TextEncoder as NodeTextEncoder,
 } from 'text-encoding'
+import { Chain, SignTransactionResponse, UALErrorType, User } from 'universal-authenticator-library'
 
 import { Name } from './interfaces'
 import { UALLedgerError } from './UALLedgerError'
