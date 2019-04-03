@@ -39,7 +39,7 @@ export class Ledger extends Authenticator {
    * Ledger will only work with ssl secured websites
    */
   public shouldRender(): boolean {
-    if (window.location.protocol !== 'https:') {
+    if (window.location.protocol !== 'https:' || this.isMobile()) {
       return false
     }
 
@@ -118,6 +118,16 @@ export class Ledger extends Authenticator {
 
   public reset(): void {
     return
+  }
+
+  public isMobile(): boolean {
+    const userAgent = window.navigator.userAgent
+    const isIOS = userAgent.includes('iPhone') || userAgent.includes('iPad')
+    const isMobile = userAgent.includes('Mobile')
+    const isAndroid = userAgent.includes('Android')
+    const isCustom = userAgent.toLowerCase().includes('eoslynx')
+
+    return isIOS || isMobile || isAndroid || isCustom
   }
 
   public requiresGetKeyConfirmation(accountName?: string): boolean {

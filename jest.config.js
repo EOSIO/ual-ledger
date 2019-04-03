@@ -19,6 +19,7 @@ module.exports = {
   ],
   testRegex: "(/src/.*(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   testEnvironment: "jsdom",
+  "testURL": "https://testing.io",
   moduleNameMapper: {
     'eosjs': '<rootDir>/src/__mocks__/eosjs.ts'
   },
