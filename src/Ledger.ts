@@ -31,6 +31,16 @@ export class Ledger extends Authenticator {
     this.chains = chains
   }
 
+  private isMobile(): boolean {
+    const userAgent = window.navigator.userAgent
+    const isIOS = userAgent.includes('iPhone') || userAgent.includes('iPad')
+    const isMobile = userAgent.includes('Mobile')
+    const isAndroid = userAgent.includes('Android')
+    const isCustom = userAgent.toLowerCase().includes('eoslynx')
+
+    return isIOS || isMobile || isAndroid || isCustom
+  }
+
   public async init(): Promise<void> {
     console.info('Ledger initialized!')
   }
@@ -118,16 +128,6 @@ export class Ledger extends Authenticator {
 
   public reset(): void {
     return
-  }
-
-  public isMobile(): boolean {
-    const userAgent = window.navigator.userAgent
-    const isIOS = userAgent.includes('iPhone') || userAgent.includes('iPad')
-    const isMobile = userAgent.includes('Mobile')
-    const isAndroid = userAgent.includes('Android')
-    const isCustom = userAgent.toLowerCase().includes('eoslynx')
-
-    return isIOS || isMobile || isAndroid || isCustom
   }
 
   public requiresGetKeyConfirmation(accountName?: string): boolean {
