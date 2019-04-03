@@ -5,6 +5,20 @@ import { CONSTANTS } from './constants'
 import { Name } from './interfaces'
 import { ledgerLogo } from './ledgerLogo'
 
+declare var window: any
+
+// Make userAgent mutable for testing
+Object.defineProperty(window.navigator, 'userAgent', ((val) => {
+  return {
+    get: () => val,
+    set: (v) => {
+      val = v
+    }
+  }
+})(window.navigator.userAgent))
+
+
+
 describe('Ledger', () => {
   let app
   const exampleNet = {
@@ -58,5 +72,32 @@ describe('Ledger', () => {
     await expect(app.login())
       .rejects
       .toThrow('Account validation failed for account undefined.')
+  })
+
+  describe('should render', () => {
+    let desktopBrowser: string
+    let mobileBrowser: string
+    let embeddedBrowser: string
+
+    beforeAll(() => {
+      desktopBrowser = 'Chrome'
+      mobileBrowser = 'iPhone'
+      embeddedBrowser = 'EosLynx Android'
+    })
+
+    it('only on desktop', () => {
+      window.navigator.userAgent = desktopBrowser
+      expect(app.shouldRender()).toBe(true)
+    })
+
+    it('not on mobile', () => {
+      window.navigator.userAgent = mobileBrowser
+      expect(app.shouldRender()).toBe(false)
+    })
+
+    it('not in an embedded browser', () => {
+      window.navigator.userAgent = embeddedBrowser
+      expect(app.shouldRender()).toBe(false)
+    })
   })
 })
