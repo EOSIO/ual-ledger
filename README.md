@@ -28,9 +28,9 @@ npm install ual-ledger --save
 * You must have the [eos app](https://support.ledger.com/hc/en-us/articles/360008913653) installed on your ledger device. You can download it to your device using [Ledger Live](https://www.ledger.com/pages/ledger-live), if you do not already have it.
 * Use one of the UAL renderers below.
 
-  * React - `universal-authenticator-library-react-js-renderer`
+  * React - `ual-reactjs-renderer`
 
-  * Vanillajs - `universal-authenticator-library-plain-js-renderer`
+  * PlainJS - `ual-plainjs-renderer`
 
 * An `HTTPS` connection is required
 
@@ -40,7 +40,7 @@ npm install ual-ledger --save
 
 ```jsx
 import { Ledger } from 'ual-ledger'
-import { UALProvider, withUAL } from 'universal-authenticator-library-react-js-renderer'
+import { UALProvider, withUAL } from 'ual-reactjs-renderer'
 
 const exampleNet = {
   chainId: '',
