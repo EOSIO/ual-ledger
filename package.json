@@ -1,6 +1,6 @@
 {
   "name": "ual-ledger",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index.js",
   "license": "MIT",
   "author": {
@@ -16,17 +16,17 @@
     "clean-build": "rm -rf dist && yarn build",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest",
-    "prepare": "yarn clean-build"
+    "prepublish": "yarn clean-build"
   },
   "dependencies": {
     "eosjs": "20.0.0",
     "eosjs-ledger-signature-provider": "0.1.1",
-    "universal-authenticator-library": "0.1.0",
+    "universal-authenticator-library": "^0.1.1",
     "uuid": "3.3.2"
   },
   "devDependencies": {
     "@babel/runtime": "^7.2.0",
-    "@blockone/tslint-config-blockone": "^4.0.0",
+    "@blockone/tslint-config-blockone": "^4.0.1",
     "@types/jest": "^24.0.6",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5",
