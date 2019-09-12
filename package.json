@@ -9,7 +9,8 @@
   },
   "contributors": [
     "Randy Torres",
-    "Brandon Fancher"
+    "Brandon Fancher",
+    "Mike Manfredi"
   ],
   "scripts": {
     "build": "tsc --build tsconfig.json",
@@ -20,8 +21,8 @@
   },
   "dependencies": {
     "eosjs": "20.0.0",
-    "eosjs-ledger-signature-provider": "0.1.1",
-    "universal-authenticator-library": "^0.1.1",
+    "eosjs-ledger-signature-provider": "0.1.2",
+    "universal-authenticator-library": "0.1.4",
     "uuid": "3.3.2"
   },
   "devDependencies": {
