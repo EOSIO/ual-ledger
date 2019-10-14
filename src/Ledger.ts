@@ -77,11 +77,14 @@ export class Ledger extends Authenticator {
     return await signatureProvider.getAvailableKeys(requestPermission, indexArray)
   }
 
-  public async login(accountName?: string, requestPermission: boolean = true, validate: boolean = true)
-  : Promise<User[]> {
+  public async login(
+    accountName?: string,
+    addressIndex: number = 0,
+    requestPermission: boolean = true,
+    validate: boolean = true): Promise<User[]> {
     for (const chain of this.chains) {
       const user = new LedgerUser(chain, accountName, this.requiresGetKeyConfirmation(accountName) && requestPermission)
-      await user.init()
+      await user.init(addressIndex)
       if (validate) {
         const isValid = await user.isAccountValid()
         if (!isValid) {

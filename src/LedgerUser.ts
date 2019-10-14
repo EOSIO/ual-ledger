@@ -33,8 +33,9 @@ export class LedgerUser extends User {
     }
   }
 
-  public async init() {
+  public async init(addressIndex: number = 0) {
     this.signatureProvider = new SignatureProvider()
+    this.signatureProvider.addressIndex = addressIndex
     const rpcEndpoint = this.chain.rpcEndpoints[0]
     const rpcEndpointString = `${rpcEndpoint.protocol}://${rpcEndpoint.host}:${rpcEndpoint.port}`
     this.rpc = new JsonRpc(rpcEndpointString)
