@@ -17,7 +17,7 @@
     "clean-build": "rm -rf dist && yarn build",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest",
-    "prepublish": "yarn clean-build"
+    "prepare": "yarn clean-build"
   },
   "dependencies": {
     "eosjs": "20.0.0",
