@@ -13,8 +13,7 @@
     "Mike Manfredi"
   ],
   "scripts": {
-    "build": "tsc --build tsconfig.json",
-    "clean-build": "rm -rf dist && yarn build",
+    "build": "rm -rf dist && tsc --build tsconfig.json",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest",
     "prepare": "yarn clean-build"
