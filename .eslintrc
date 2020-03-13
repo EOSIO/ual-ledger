@@ -1,0 +1,7 @@
+{
+  "extends": "@blockone/blockone",
+  "parserOptions": {
+    "project": "tsconfig.eslint.json",
+    "sourceType": "module"
+  }
+}
