@@ -1,4 +1,3 @@
-
 import { LedgerUser } from './LedgerUser'
 
 describe('LedgerUser', () => {

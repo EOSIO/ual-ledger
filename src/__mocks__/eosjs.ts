@@ -1,3 +1,4 @@
+/* eslint max-classes-per-file: 0 */
 export class Api {
   public transact = jest.fn().mockImplementation(async () => {
     return {
@@ -12,7 +13,7 @@ export class Api {
 }
 
 export class JsonRpc {
-  public get_account = jest.fn().mockImplementation(async (account) => { // tslint:disable-line
+  public get_account = jest.fn().mockImplementation(async (account) => {
     if (!account) {
       throw Error('No accountName provided')
     }
@@ -27,4 +28,4 @@ export class JsonRpc {
       }],
     }
   })
-} // tslint:disable-line max-classes-per-file
+}
