@@ -97,4 +97,10 @@ describe('Ledger', () => {
       expect(app.shouldRender()).toBe(false)
     })
   })
+
+  describe('get authenticator name', () => {
+    it('should be able to get authenticator name', () => {
+      expect(app.getName()).toBe(Name)
+    })
+  })
 })

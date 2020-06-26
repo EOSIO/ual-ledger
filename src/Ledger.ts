@@ -143,4 +143,8 @@ export class Ledger extends Authenticator {
 
     return true
   }
+
+  public getName(): string {
+    return Name
+  }
 }

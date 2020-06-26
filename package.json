@@ -1,6 +1,6 @@
 {
   "name": "ual-ledger",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/index.js",
   "license": "MIT",
   "author": {
@@ -21,7 +21,7 @@
   "dependencies": {
     "eosjs": "20.0.3",
     "eosjs-ledger-signature-provider": "0.1.2",
-    "universal-authenticator-library": "0.2.0"
+    "universal-authenticator-library": "0.3.0"
   },
   "devDependencies": {
     "@babel/runtime": "^7.8.7",
