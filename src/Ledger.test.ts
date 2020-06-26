@@ -1,11 +1,10 @@
-
 import { Ledger } from './Ledger'
 
 import { CONSTANTS } from './constants'
 import { Name } from './interfaces'
 import { ledgerLogo } from './ledgerLogo'
 
-declare var window: any
+declare let window: any
 
 // Make userAgent mutable for testing
 Object.defineProperty(window.navigator, 'userAgent', ((val) => {
@@ -16,8 +15,6 @@ Object.defineProperty(window.navigator, 'userAgent', ((val) => {
     }
   }
 })(window.navigator.userAgent))
-
-
 
 describe('Ledger', () => {
   let app
@@ -98,6 +95,12 @@ describe('Ledger', () => {
     it('not in an embedded browser', () => {
       window.navigator.userAgent = embeddedBrowser
       expect(app.shouldRender()).toBe(false)
+    })
+  })
+
+  describe('get authenticator name', () => {
+    it('should be able to get authenticator name', () => {
+      expect(app.getName()).toBe(Name)
     })
   })
 })
