@@ -13,6 +13,8 @@ import { LedgerOptions, Name } from './interfaces'
 import { ledgerLogo } from './ledgerLogo'
 import { LedgerUser } from './LedgerUser'
 import { UALLedgerError } from './UALLedgerError'
+import { SignatureProvider } from 'eosjs-ledger-signature-provider'
+const signatureProvider = new SignatureProvider()
 
 export class Ledger extends Authenticator {
   private onBoardingLink: string = CONSTANTS.onBoardingLink
@@ -69,16 +71,28 @@ export class Ledger extends Authenticator {
    *
    * @param accountName Account Name is an optional paramter
    */
-  public async login(accountName?: string): Promise<User[]> {
+
+  public async getAvailableKeys( requestPermission: boolean = false, indexArray: number[] = [0])
+  : Promise<string[]> {
+    return await signatureProvider.getAvailableKeys(requestPermission, indexArray)
+  }
+
+  public async login(
+    accountName?: string,
+    addressIndex: number = 0,
+    requestPermission: boolean = true,
+    validate: boolean = true): Promise<User[]> {
     for (const chain of this.chains) {
-      const user = new LedgerUser(chain, accountName, this.requiresGetKeyConfirmation(accountName))
-      await user.init()
-      const isValid = await user.isAccountValid()
-      if (!isValid) {
-        const message = `Error logging into account "${accountName}"`
-        const type = UALErrorType.Login
-        const cause = null
-        throw new UALLedgerError(message, type, cause)
+      const user = new LedgerUser(chain, accountName, this.requiresGetKeyConfirmation(accountName) && requestPermission)
+      await user.init(addressIndex)
+      if (validate) {
+        const isValid = await user.isAccountValid()
+        if (!isValid) {
+          const message = `Error logging into account "${accountName}"`
+          const type = UALErrorType.Login
+          const cause = null
+          throw new UALLedgerError(message, type, cause)
+        }
       }
       this.users.push(user)
     }
